@@ -1,4 +1,4 @@
-/**
+/** 
  * The DMLOperationsTest class is specifically designed to test the functionality of the methods present in the DMLOperations class.
  * This test class contains several test methods, each one designed to validate individual methods in the DMLOperations class, ensuring their correct behavior.
  * The Salesforce Assert class is employed extensively in these test methods to assert and validate the expected outcomes.
@@ -24,8 +24,7 @@ public with sharing class DMLOperationsTest {
         System.assertNotEquals(null, retrievedAccount, 'The retrieved account should not be null');
         System.assertEquals(newAccountId, retrievedAccount.Id, 'The IDs should match');
     }
-
-    @IsTest
+     @IsTest
     static void testCreateAccount() {
         // Test the method
         DMLOperations.createAccount('Test Account', 'Technology');
@@ -60,7 +59,7 @@ public with sharing class DMLOperationsTest {
         System.assertEquals(newContactId, retrievedContact.Id, 'The IDs should match');
         System.assertEquals(testAccount.Id, retrievedContact.AccountId, 'The Account IDs should match');
     }
-    
+
     @IsTest
     static void testUpdateContactLastName() {
         // Create a test Contact first
@@ -243,7 +242,7 @@ public with sharing class DMLOperationsTest {
 			System.assertEquals(c.LastName, c.Account.Name, 'Contact last name should match Account name');
 		}
 	}
-    
+   
     @IsTest
     static void testInsertAndDeleteLeads() {
         // Prepare the Lead names
@@ -258,8 +257,6 @@ public with sharing class DMLOperationsTest {
         // Assert that the Leads have been deleted
         System.assertEquals(0, retrievedLeads.size(), 'All Leads should have been deleted');
     }
-
-
 
     @IsTest
     static void testCreateAndDeleteCases() {
@@ -277,4 +274,4 @@ public with sharing class DMLOperationsTest {
         Assert.areEqual(0, cases.size(), 'Cases were not successfully deleted.');
     }
 
-}
+}  
